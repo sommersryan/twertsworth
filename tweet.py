@@ -17,9 +17,10 @@ def post(tweet):
 	return "Tweeted " + tweet 
 
 def checkReplies():
-	lastReply = os.environ.get("LASTREPLY") or 0
-	replies = api.GetReplies(since_id = lastReply)
-	os.environ["LASTREPLY"] = replies[-1].id_str
+	lastReply = os.environ.get("LASTREPLY") or '792210713766924288'
+	replies = api.GetMentions(since_id = lastReply)
+	if replies: 
+		os.environ["LASTREPLY"] = replies[-1].id_str
 	return replies
 	
 def getMediaURL(status):
