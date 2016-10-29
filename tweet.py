@@ -1,5 +1,6 @@
 import config
 import twitter
+import os
 
 api = twitter.Api(
 					consumer_key = config.CONSUMER_KEY,
@@ -14,5 +15,10 @@ def post(tweet):
 		tweet = tweet[:140]
 	api.PostUpdate(tweet)
 	return "Tweeted " + tweet 
+
+def checkReplies():
+	lastReply = os.environ.get("LASTREPLY") or 0
+	return api.GetReplies(since_id = lastReply)
+	
 
 	
