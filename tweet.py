@@ -18,7 +18,14 @@ def post(tweet):
 
 def checkReplies():
 	lastReply = os.environ.get("LASTREPLY") or 0
-	return api.GetReplies(since_id = lastReply)
+	replies = api.GetReplies(since_id = lastReply)
+	os.environ["LASTREPLY"] = replies[-1].id_str
+	return replies
+	
+def getMediaURL(status):
+	media = [pic.AsDict()["media_url"] for pic in status.media]
+	return media
+		
 	
 
 	
