@@ -24,5 +24,5 @@ def getLabels(imageURL):
 										]}
 							]})
 		response = service_request.execute()
-		labels = [label['description'] for label in response['responses'][0]['labelAnnotations']]
+		labels = [label['description'] for label in response['responses'][0]['labelAnnotations']] #hacky parsing of the elaborate JSON response
 		return labels
