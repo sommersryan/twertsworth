@@ -1,10 +1,9 @@
 import json, markovify, random
-from config import MIN_CHAR, MAX_CHAR, ATTEMPTS
+from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING
 
-def loadModel(chainStore):
-	with open(chainStore,'r') as chainFile:
-		chainString = json.load(chainStore)
-	return markovify.Text.from_chain(chainString)
+def loadModel(corpus):
+	with open(corpus,encoding=ENCODING) as corpusFile:
+		return markovify.Text(corpusFile.read())
 
 def writePoem(textModel, seedWords):
 	modelKeys = list(textModel.chain.model)
