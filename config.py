@@ -7,3 +7,6 @@ CONSUMER_SECRET = os.environ.get("CONSUMER_SECRET") or ''
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN") or ''
 ACCESS_SECRET = os.environ.get("ACCESS_SECRET") or ''
 
+MIN_CHAR = 80 #really short tweets are boring
+MAX_CHAR = 140 #the tweeter's burden
+ATTEMPTS = 10 #number of times we'll try to make a suitable tweet for each model key
