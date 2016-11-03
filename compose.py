@@ -13,6 +13,8 @@ def writePoem(textModel, seedWords):
 		if results:
 			random.shuffle(results) # shuffle the model key pairs so we don't always get the same seed for a poem from similar images
 			for result in results:
-				poem = textModel.make_sentence_with_start(' '.join(result))
-				if MIN_CHAR <= poem <= MAX_CHAR:
-					return poem
+				for t in range(0,ATTEMPTS):
+					poem = textModel.make_sentence_with_start(' '.join(result))
+					if MIN_CHAR <= poem <= MAX_CHAR:
+						print "took " + t + " attempts"
+						return poem
