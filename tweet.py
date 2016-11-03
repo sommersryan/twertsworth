@@ -17,7 +17,7 @@ def post(tweet):
 	return "Tweeted " + tweet 
 
 def checkReplies():
-	lastReply = os.environ.get("LASTREPLY") or '792210713766924288'
+	lastReply = os.environ.get("LASTREPLY") or '792210713766924288' #arbitrary sinceId for an old tweet
 	replies = api.GetMentions(since_id = lastReply)
 	if replies: 
 		os.environ["LASTREPLY"] = replies[-1].id_str
@@ -26,7 +26,5 @@ def checkReplies():
 def getMediaURL(status):
 	media = [pic.AsDict()["media_url"] for pic in status.media]
 	return media
-		
-	
 
 	
