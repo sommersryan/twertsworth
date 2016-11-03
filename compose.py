@@ -16,5 +16,5 @@ def writePoem(textModel, seedWords):
 				for t in range(0,ATTEMPTS):
 					poem = textModel.make_sentence_with_start(' '.join(result))
 					if MIN_CHAR <= poem <= MAX_CHAR:
-						print "took " + t + " attempts"
+						print ("took " + t + " attempts")
 						return poem
