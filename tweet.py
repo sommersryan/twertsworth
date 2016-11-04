@@ -24,7 +24,7 @@ def checkReplies():
 	return replies
 	
 def getMediaURL(status):
-	media = [pic.AsDict()["media_url"] for pic in status.media]
-	return media
+	mediaURLs = [pic.AsDict()["media_url"] for pic in status.media]
+	return tuple(status,mediaURLS)
 
 	
