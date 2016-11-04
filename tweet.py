@@ -25,7 +25,7 @@ def checkReplies():
 	
 def getMediaURL(status):
 	mediaURLs = [pic.AsDict()["media_url"] for pic in status.media]
-	return (status,mediaURLs)
+	return (status.id_str,mediaURLs)
 
 def replyTo(tweet,replyToID):
 	api.PostUpdate(status=tweet,in_reply_to_status_id=replyToID)
