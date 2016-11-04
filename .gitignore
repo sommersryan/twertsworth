@@ -43,3 +43,6 @@ venv
 
 #Google credentials
 credentials
+
+#logging
+runtime.log
