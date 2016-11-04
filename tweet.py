@@ -1,6 +1,4 @@
-import config
-import twitter
-import os
+import config, twitter, os, logging
 
 api = twitter.Api(
 					consumer_key = config.CONSUMER_KEY,
@@ -21,11 +19,14 @@ def checkReplies():
 	replies = api.GetMentions(since_id = lastReply)
 	if replies: 
 		os.environ["LASTREPLY"] = replies[-1].id_str
+	logging.info('Obtained statuses: %s',','.join([reply.id_str for reply in replies]))
 	return replies
 	
 def getMediaURL(status):
 	mediaURLs = [pic.AsDict()["media_url"] for pic in status.media]
-	return (status.id_str,mediaURLs)
+	logging.info('Obtained %s URLs',str(len(mediaURLs)))
+	replyPrefix = '@' + status.user.screen_name + '\r'
+	return (status.id_str, replyPrefix, mediaURLs) #return the ID of what's going to be replied to, a prefix that's the @ and linebreak, and list of media URLs
 
 def replyTo(tweet,replyToID):
 	api.PostUpdate(status=tweet,in_reply_to_status_id=replyToID)

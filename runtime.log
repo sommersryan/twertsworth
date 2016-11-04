@@ -1,203 +1,444 @@
-DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client signature_type=AUTH_HEADER, encoding=utf-8, timestamp=None, nonce=None, verifier=None, rsa_key=None, client_secret=****, realm=None, signature_method=HMAC-SHA1, decoding=utf-8, callback_uri=None, client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
 DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
-DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('since_id', '792210713766924288'), ('oauth_version', '1.0'), ('oauth_nonce', '97087407404494900711478286300'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_timestamp', '1478286300'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq')]
-DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=97087407404494900711478286300&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478286300&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&since_id=792210713766924288
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('since_id', '792210713766924288'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '174230201775634025311478294642'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294642')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=174230201775634025311478294642&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294642&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&since_id=792210713766924288
 DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/mentions_timeline.json
-DEBUG:oauthlib.oauth1.rfc5849:Base signing string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fmentions_timeline.json&oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D97087407404494900711478286300%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478286300%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26since_id%3D792210713766924288
-DEBUG:oauthlib.oauth1.rfc5849:Signature: lTVLDf6PWQai1ZKTjQKgmmq2PCM=
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fmentions_timeline.json&oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D174230201775634025311478294642%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294642%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26since_id%3D792210713766924288
+DEBUG:oauthlib.oauth1.rfc5849:Signature: pTtaSnUx6iJQ7cyRzwBNr5TZfVI=
 DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
 DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/mentions_timeline.json?since_id=792210713766924288
-DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept': b'*/*', b'Connection': b'keep-alive', b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Authorization': b'OAuth oauth_nonce="97087407404494900711478286300", oauth_timestamp="1478286300", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="lTVLDf6PWQai1ZKTjQKgmmq2PCM%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Connection': b'keep-alive', b'User-Agent': b'python-requests/2.11.1', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Authorization': b'OAuth oauth_nonce="174230201775634025311478294642", oauth_timestamp="1478294642", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="pTtaSnUx6iJQ7cyRzwBNr5TZfVI%3D"'}
 DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
 INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
-DEBUG:requests.packages.urllib3.connectionpool:"GET /1.1/statuses/mentions_timeline.json?since_id=792210713766924288 HTTP/1.1" 200 1967
-INFO:root:Processing replies 794563092743077888 794561482851811333 794436107484229632 794435830504947712 792487995693756416
-INFO:root:Using image http://pbs.twimg.com/media/Cwba6hOW8AImflx.jpg for reply 794563092743077888
+DEBUG:requests.packages.urllib3.connectionpool:"GET /1.1/statuses/mentions_timeline.json?since_id=792210713766924288 HTTP/1.1" 200 7738
+INFO:root:Obtained statuses: 794640451001257984,794638116862754816,794637985442648064,794636304038273024,794636183758217216,794636137276981248,794636101369532417,794634840104693760,794634052389208064,794634002443497472,794633754115448836,794633713518780416,794633704849215489,794633538238705664,794633359918006272,794633295594221568,794633218787983360,794633199020191744,794633056858599424,794632897705689089
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Obtained 1 URLs
+INFO:root:Processing replies 794640451001257984 794638116862754816 794637985442648064 794636304038273024 794636183758217216 794636137276981248 794636101369532417 794634840104693760 794634052389208064 794634002443497472 794633754115448836 794633713518780416 794633704849215489 794633538238705664 794633295594221568 794633218787983360 794633199020191744 794633056858599424
+INFO:root:Using image http://pbs.twimg.com/media/CwchRAIWEAA5sx7.jpg for reply 794640451001257984
 INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
 INFO:oauth2client.transport:Attempting refresh to obtain initial access_token
-DEBUG:oauth2client.crypt:[b'eyJraWQiOiI0MWUyNDQ4NGZjN2ZmNDYyZjc4ZTNjM2QzNjkyNjAyZGEwNDIxODMxIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ', b'eyJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm0iLCJpYXQiOjE0NzgyODYzMDAsImV4cCI6MTQ3ODI4OTkwMCwiYXVkIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3Y0L3Rva2VuIiwiaXNzIjoidHdlcnRzd29ydGgtMTQ3OTA0QGFwcHNwb3QuZ3NlcnZpY2VhY2NvdW50LmNvbSJ9', b'wVt-_GS9PovP_pb-XkpFbVqYzs2IZTUiLFragJnkuIkq2vWACTgM46OiMKsiYitX3sUEtUdi2mzEzLU2aRnNpYluZnrrlJ-QBVWaHdRvfCNKzcShctRVPjxPvcMWgdaEuTdffD5UMtIV71IZIJfHefqp9ywgRze_UkUS862Djd7LRZqNkf5zMavqN5k8MwmsPM5AuLLbKGrlH7Bn_09qHJ1QljjDIZLJJFhq9ltUdq4r-gB9A2-rEtu5rUGPcELR3PKRB4KGZ0eNXyKYV0pH0m0NlB1kRp9RIap0ddouMe9Ytu1ea3ruFmBamHWfQw1gaEUhFcLEPAertkUpj6xA1w']
+DEBUG:oauth2client.crypt:[b'eyJraWQiOiI0MWUyNDQ4NGZjN2ZmNDYyZjc4ZTNjM2QzNjkyNjAyZGEwNDIxODMxIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ', b'eyJpYXQiOjE0NzgyOTQ2NDMsInNjb3BlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSIsImF1ZCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92NC90b2tlbiIsImlzcyI6InR3ZXJ0c3dvcnRoLTE0NzkwNEBhcHBzcG90LmdzZXJ2aWNlYWNjb3VudC5jb20iLCJleHAiOjE0NzgyOTgyNDN9', b'vTIR4Eu-WMGlw_RdTUO7qK-H14jb2M3M0W9yUhIObRRaXbXZCKVRO81IiRMgWgau_fWSXyZe9weVCtaJIHeiDW7nIgJun1wXeq_shcuh_R2XWKvg9K2hVWdLN5_WcDftxokE1Uo9cnpg1zu7IiPAlSk7KlWQ7UnZSJFQb7_WzsAmsC2OXSDqNfU36oN-0VQojzcoz4wKhqPqJFrdda-RmoRWBR2pRUks5CikP2dC_1uIji2kgEDhcL8Tp46dyedu8NwXISA42q1BfdwaRt7AwdXRJ6pvKBu4C6cgJcNOs0GNHltBQMmQDNe-ti3CyhlsRVbrzZ1dE82hslpGDygtEg']
 INFO:oauth2client.client:Refreshing access_token
-INFO:root:Using labels vehicle,aircraft
-INFO:root:Trying vehicle
-INFO:root:Found 1 model key pairs
-INFO:root:Trying the pair vehicle thereof.
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Trying aircraft
+INFO:root:Using labels body of water,harbor
+INFO:root:Trying body of water
 INFO:root:Found 0 model key pairs
-INFO:root:None of the seed words worked
-DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client signature_type=AUTH_HEADER, encoding=utf-8, timestamp=None, nonce=None, verifier=None, rsa_key=None, client_secret=****, realm=None, signature_method=HMAC-SHA1, decoding=utf-8, callback_uri=None, client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, resource_owner_secret=****>
-DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
-DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_version', '1.0'), ('oauth_nonce', '178367527760106072281478286302'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_timestamp', '1478286302'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('status', 'But, after the Armada.'), ('in_reply_to_status_id', '794563092743077888')]
-DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794563092743077888&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=178367527760106072281478286302&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478286302&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=But%2C%20after%20the%20Armada.
-DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794563092743077888%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D178367527760106072281478286302%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478286302%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3DBut%252C%2520after%2520the%2520Armada.
-DEBUG:oauthlib.oauth1.rfc5849:Signature: dsRyxLSGAWYsA/9tJhZJ1fOVRqk=
-DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
-DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept': b'*/*', b'Content-Type': b'application/x-www-form-urlencoded', b'Accept-Encoding': b'gzip, deflate', b'Content-Length': b'72', b'Connection': b'keep-alive', b'User-Agent': b'python-requests/2.11.1', b'Authorization': b'OAuth oauth_nonce="178367527760106072281478286302", oauth_timestamp="1478286302", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="dsRyxLSGAWYsA%2F9tJhZJ1fOVRqk%3D"'}
-DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'status=But%2C+after+the+Armada.&in_reply_to_status_id=794563092743077888'
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
-DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 757
-INFO:root:Using image http://pbs.twimg.com/media/CwbZcn5XEAE-hpu.jpg for reply 794561482851811333
-INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
-INFO:root:Using labels clothing,dress
-INFO:root:Trying clothing
+INFO:root:Trying harbor
 INFO:root:Found 7 model key pairs
-INFO:root:Trying the pair clothing tightly
-INFO:root:Text model responded: clothing tightly bound Around her, hedging her with sanctity Peculiar; all stood shy about her heart, But it has been quelled; Old legends of the tender plants of reform with aqua fortis, yet, where he shines, The sun sheds the bloom of Nature close, And yet -- the blind one, the other, Ill. They clash in Nature--so the Persian throne was freedom and union, wave!
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: clothing tightly bound Around her, hedging her with love and then as now, not slower, faster, Nor fear to miss The road, although so very oft?
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: clothing tightly bound Around her, hedging her with her at her side, Not knowing.
-INFO:root:Satisfied conditions in 2 attempts
-DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client signature_type=AUTH_HEADER, encoding=utf-8, timestamp=None, nonce=None, verifier=None, rsa_key=None, client_secret=****, realm=None, signature_method=HMAC-SHA1, decoding=utf-8, callback_uri=None, client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, resource_owner_secret=****>
+INFO:root:Trying the pair harbor of
+INFO:root:Text model responded: harbor of Bordeaux She sails a steel-blue sea.
+INFO:root:Text model responded: harbor of grave thought, and unsettled the foundations of a great master of the West-Wind, Gave the others to know, Forbids us good, forbids us to God, But for profit of the hour has come.
+INFO:root:Text model responded: harbor of Bordeaux She sails with her hand, as if insane were he, And all the days When thought met deed with mutual smiles; he passed the church; Winds of remembrance swept as over the foam Of perilous seas in faery lands forlorn.
+INFO:root:Text model responded: harbor of Bordeaux She sails with her own long, raven hair.
+INFO:root:Text model responded: harbor of grave thought, and turn apart Thy visage to and fro, To serve him with sweet pain; And still maintains, with milder laws, And ever give us pause there's the respect That makes old emptinesses stare in wonder; The memory of my face, The fair Fay twined it round with reef and furl, and haul the line, stately with the hymns of lofty cheer.
+INFO:root:Text model responded: harbor of grave desire Such as were low of stature, broad of shoulder, great of limb, Burly face and it was whose silver arrows Chased the dark World's grand, enchanted face -- All the world of men: Stood thronging the faint horizon's languid arms, Each into each, the hazy distance Of that insatiable desire, Meant to be wise Daughter of Jove Say has he been; but how sweet over there on the hillside lies the village, Far off in hollow towers, And groping blindly above it leaped forth, half startled at itself, Its feet upon the wondrous world of dead, Give to the neighbor peace, That love might never know that love you Close lovely and soothing death.
+INFO:root:Text model responded: harbor of Bordeaux She sails a steel-blue sea.
+INFO:root:Text model responded: harbor of God's good children, He Himself Had led them onward, Where the many cruel fancies Ever in motion, fairer in repose.
+INFO:root:Satisfied conditions in 7 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
 DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
-DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_version', '1.0'), ('oauth_nonce', '125485210768066618741478286303'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_timestamp', '1478286303'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('status', 'clothing tightly bound Around her, hedging her with her at her side, Not knowing.'), ('in_reply_to_status_id', '794561482851811333')]
-DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794561482851811333&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=125485210768066618741478286303&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478286303&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=clothing%20tightly%20bound%20Around%20her%2C%20hedging%20her%20with%20her%20at%20her%20side%2C%20Not%20knowing.
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '132709450162516905121478294645'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294645'), ('in_reply_to_status_id', '794640451001257984'), ('status', "@em_dash01\rharbor of God's good children, He Himself Had led them onward, Where the many cruel fancies Ever in motion, fairer in repose.")]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794640451001257984&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=132709450162516905121478294645&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294645&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40em_dash01%0Dharbor%20of%20God%27s%20good%20children%2C%20He%20Himself%20Had%20led%20them%20onward%2C%20Where%20the%20many%20cruel%20fancies%20Ever%20in%20motion%2C%20fairer%20in%20repose.
 DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794561482851811333%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D125485210768066618741478286303%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478286303%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3Dclothing%2520tightly%2520bound%2520Around%2520her%252C%2520hedging%2520her%2520with%2520her%2520at%2520her%2520side%252C%2520Not%2520knowing.
-DEBUG:oauthlib.oauth1.rfc5849:Signature: I7FYtd/PZfZtfZLjkLPq8EP6nVM=
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794640451001257984%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D132709450162516905121478294645%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294645%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540em_dash01%250Dharbor%2520of%2520God%2527s%2520good%2520children%252C%2520He%2520Himself%2520Had%2520led%2520them%2520onward%252C%2520Where%2520the%2520many%2520cruel%2520fancies%2520Ever%2520in%2520motion%252C%2520fairer%2520in%2520repose.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: F277phtI/Xt3MAhNj+XsrM62UUo=
 DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
 DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept': b'*/*', b'Content-Type': b'application/x-www-form-urlencoded', b'Accept-Encoding': b'gzip, deflate', b'Content-Length': b'133', b'Connection': b'keep-alive', b'User-Agent': b'python-requests/2.11.1', b'Authorization': b'OAuth oauth_nonce="125485210768066618741478286303", oauth_timestamp="1478286303", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="I7FYtd%2FPZfZtfZLjkLPq8EP6nVM%3D"'}
-DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'status=clothing+tightly+bound+Around+her%2C+hedging+her+with+her+at+her+side%2C+Not+knowing.&in_reply_to_status_id=794561482851811333'
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'196', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="132709450162516905121478294645", oauth_timestamp="1478294645", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="F277phtI%2FXt3MAhNj%2BXsrM62UUo%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794640451001257984&status=%40em_dash01%0Dharbor+of+God%27s+good+children%2C+He+Himself+Had+led+them+onward%2C+Where+the+many+cruel+fancies+Ever+in+motion%2C+fairer+in+repose.'
 INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
-DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 789
-INFO:root:Using image http://pbs.twimg.com/media/CwZnbHCW8AAGrGY.jpg for reply 794436107484229632
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 898
+INFO:root:Using image http://pbs.twimg.com/media/CwcfJTdXEAAkvJD.jpg for reply 794638116862754816
 INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
-INFO:root:Using labels person,elder
+INFO:root:Using labels image,cat
+INFO:root:Trying image
+INFO:root:Found 31 model key pairs
+INFO:root:Trying the pair image long
+INFO:root:Text model responded: image long Save of the Cambridge Platform and the battle poured Its red and gold, Or fairy hobbling to the editorial WE to help, And all that dainty waft had fed, Which made their rude untutored hearts to long for a mute observance hung.
+INFO:root:Text model responded: image long Save of the wise, the soul be given them to beautiful results--and I will not cheer her gloom; Nor the world's garden banished.
+INFO:root:Text model responded: image long Save of the Pictured Rocks there are no more.
+INFO:root:Text model responded: image long Save of the bride wet her feet Turn never backward: hers no more upon earth, uncomplaining, Thither, as leaves from the mine?
+INFO:root:Text model responded: image long Save of the earth I never writ nor no man is, soft as carded wool, But the sweetness of his face.
+INFO:root:Satisfied conditions in 4 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '87490107545094641811478294646'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294646'), ('in_reply_to_status_id', '794638116862754816'), ('status', '@kylesturgeon\rimage long Save of the earth I never writ nor no man is, soft as carded wool, But the sweetness of his face.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794638116862754816&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=87490107545094641811478294646&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294646&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40kylesturgeon%0Dimage%20long%20Save%20of%20the%20earth%20I%20never%20writ%20nor%20no%20man%20is%2C%20soft%20as%20carded%20wool%2C%20But%20the%20sweetness%20of%20his%20face.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794638116862754816%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D87490107545094641811478294646%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294646%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540kylesturgeon%250Dimage%2520long%2520Save%2520of%2520the%2520earth%2520I%2520never%2520writ%2520nor%2520no%2520man%2520is%252C%2520soft%2520as%2520carded%2520wool%252C%2520But%2520the%2520sweetness%2520of%2520his%2520face.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: hJzGHF8x17uliAjjTiM13as0dLo=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'178', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="87490107545094641811478294646", oauth_timestamp="1478294646", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="hJzGHF8x17uliAjjTiM13as0dLo%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794638116862754816&status=%40kylesturgeon%0Dimage+long+Save+of+the+earth+I+never+writ+nor+no+man+is%2C+soft+as+carded+wool%2C+But+the+sweetness+of+his+face.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 884
+INFO:root:Using image http://pbs.twimg.com/media/CwcfCCmWEAAFtf8.jpg for reply 794637985442648064
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels person,man
 INFO:root:Trying person
 INFO:root:Found 13 model key pairs
-INFO:root:Trying the pair person who
-INFO:root:Text model responded: person who shall be thine.
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: person who shall take you and me A long while looking at his breast, is Ossipee; That shadow there may fall without measure, But rapture and beauty That dwell in nature; of the accusing bell!
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: person who shall give me, the wings of morn shut in her richest garments, Wrapped her in the desert.
-INFO:root:Satisfied conditions in 2 attempts
-DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client signature_type=AUTH_HEADER, encoding=utf-8, timestamp=None, nonce=None, verifier=None, rsa_key=None, client_secret=****, realm=None, signature_method=HMAC-SHA1, decoding=utf-8, callback_uri=None, client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, resource_owner_secret=****>
+INFO:root:Trying the pair person familiar
+INFO:root:Text model responded: person familiar with your fighting gear, Broadswords and targes Come as the Spring with all the house of John Nicholson, And stood in speechless wonder, and so Swings boldly off in hope and fervor, nearer draws his theme, First guessed by this--- If He that made fire, flood, and earth together vie Their shining depths to heights intense, But not so keen Because thou art the Way of heaven!
+INFO:root:Text model responded: person familiar with the beauty men once held so light.
+INFO:root:Text model responded: person familiar with your pools of red, O blush but yet she would realize that she shall rear ye to the name you spell, There rest Fidele's bones as well.
+INFO:root:Text model responded: person familiar with disfavor, Grown familiar with disfavor, Grown familiar with fair words, only to them that are haunting me, This that I might even say a large, number of similar ones may be as a rat, a thief, a rain-storm Creeps upon her offspring dear, Than thine upon the Saviour's breast, And beg an alms to leprosie, When he walked abroad To meditate before his tent at play, the crowing cock, The Alectryon of the soul.
+INFO:root:Text model responded: person familiar with the Power we mocked as wasted breath Of the long, lonely, silent, shadeless street; And wandered in the burning wood Played over by the Beautiful Gate,-- Himself the Gate whereby men crossed that portal wide, And sparkling water flashes from her eyes Would so dissolve and yield unto mine eyes 220 Confronted with the dead advance as much in it And know she came To conversation with the height above, From sky to sky and sudden, sweeping showers, Till ripe and blossoming thou art now supreme: We know its walls of Time; Some with massive deeds and hearts be now united!
+INFO:root:Text model responded: person familiar with the chastened Psalmist, own His judgments too are one in dread With such impatient, feverish heat, Such limitless and strong I stride, to summon those we cherished, Meet the changes of men's labour was sparing, And hearts in a porch Where gothic saints and martyrs raise A mighty army, thronging all its bends and floats On the sad landscape turns to pomp, and strength To sit aloft in the faces around her, love shone at its own tremendous hinge Tower darkening on.
+INFO:root:Text model responded: person familiar with disfavor, Grown familiar with disfavor, Grown familiar with your caresses, And the sun has hid its rays These many days; Will dreary hours In solitude's dark gloom, Thou art not he who speaks In a vale in the liquid wash of the morning world Were pressed cup-shape to take the side The heavy miles away.
+INFO:root:Text model responded: person familiar with the Virgin to the lady's beauty evermore.
+INFO:root:Text model responded: person familiar with the saints, I trust.
+INFO:root:Text model responded: person familiar with the vanished rain: From their banquet rose with all his armour in a pool, An old Grenadier of the room.
+INFO:root:Satisfied conditions in 9 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
 DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
-DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_version', '1.0'), ('oauth_nonce', '54558911827455288961478286305'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_timestamp', '1478286305'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('status', 'person who shall give me, the wings of morn shut in her richest garments, Wrapped her in the desert.'), ('in_reply_to_status_id', '794436107484229632')]
-DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794436107484229632&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=54558911827455288961478286305&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478286305&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=person%20who%20shall%20give%20me%2C%20the%20wings%20of%20morn%20shut%20in%20her%20richest%20garments%2C%20Wrapped%20her%20in%20the%20desert.
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '108469902520770761861478294648'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294648'), ('in_reply_to_status_id', '794637985442648064'), ('status', '@OhWowHmm\rperson familiar with the vanished rain: From their banquet rose with all his armour in a pool, An old Grenadier of the room.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794637985442648064&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=108469902520770761861478294648&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294648&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40OhWowHmm%0Dperson%20familiar%20with%20the%20vanished%20rain%3A%20From%20their%20banquet%20rose%20with%20all%20his%20armour%20in%20a%20pool%2C%20An%20old%20Grenadier%20of%20the%20room.
 DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794436107484229632%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D54558911827455288961478286305%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478286305%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3Dperson%2520who%2520shall%2520give%2520me%252C%2520the%2520wings%2520of%2520morn%2520shut%2520in%2520her%2520richest%2520garments%252C%2520Wrapped%2520her%2520in%2520the%2520desert.
-DEBUG:oauthlib.oauth1.rfc5849:Signature: JehVOEGTL9MZnLTYGYeU9CUGZho=
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794637985442648064%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D108469902520770761861478294648%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294648%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540OhWowHmm%250Dperson%2520familiar%2520with%2520the%2520vanished%2520rain%253A%2520From%2520their%2520banquet%2520rose%2520with%2520all%2520his%2520armour%2520in%2520a%2520pool%252C%2520An%2520old%2520Grenadier%2520of%2520the%2520room.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: ThUzSTL3QrS9yEkHXlactobcJko=
 DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
 DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept': b'*/*', b'Content-Type': b'application/x-www-form-urlencoded', b'Accept-Encoding': b'gzip, deflate', b'Content-Length': b'152', b'Connection': b'keep-alive', b'User-Agent': b'python-requests/2.11.1', b'Authorization': b'OAuth oauth_nonce="54558911827455288961478286305", oauth_timestamp="1478286305", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="JehVOEGTL9MZnLTYGYeU9CUGZho%3D"'}
-DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'status=person+who+shall+give+me%2C+the+wings+of+morn+shut+in+her+richest+garments%2C+Wrapped+her+in+the+desert.&in_reply_to_status_id=794436107484229632'
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'190', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="108469902520770761861478294648", oauth_timestamp="1478294648", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="ThUzSTL3QrS9yEkHXlactobcJko%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794637985442648064&status=%40OhWowHmm%0Dperson+familiar+with+the+vanished+rain%3A+From+their+banquet+rose+with+all+his+armour+in+a+pool%2C+An+old+Grenadier+of+the+room.'
 INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
-DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 809
-INFO:root:Using image http://pbs.twimg.com/media/CwZnIgFWQAAb0nx.jpg for reply 794435830504947712
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 897
+INFO:root:Using image http://pbs.twimg.com/media/Cwcdf6pVQAIPxgI.jpg for reply 794636304038273024
 INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
-INFO:root:Using labels dog,mammal
-INFO:root:Trying dog
-INFO:root:Found 19 model key pairs
-INFO:root:Trying the pair dog looking
-INFO:root:Text model responded: dog looking into heaven; In the hazel in his sight.
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: dog looking into the weltering serpents, With the squirrel, Adjidaumo, Perched and frisking on the grey, chill day, The Tollman Debt, who drops his bar across the table a letter signed with a timid grace, She felt a brown gloom the hillsides shift Their plumps of orchard-trees arow, Their lakes of the rose.
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: dog looking into the water.
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: dog looking into the dusk of evening: And the air with his father, Was his brawny hand.
-INFO:root:Satisfied conditions in 3 attempts
-DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client signature_type=AUTH_HEADER, encoding=utf-8, timestamp=None, nonce=None, verifier=None, rsa_key=None, client_secret=****, realm=None, signature_method=HMAC-SHA1, decoding=utf-8, callback_uri=None, client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, resource_owner_secret=****>
+INFO:root:Using labels face,cartoon
+INFO:root:Trying face
+INFO:root:Found 191 model key pairs
+INFO:root:Trying the pair face glowing
+INFO:root:Text model responded: face glowing o'er a field of battle, then Take a reckoning from there of all, to-night.
+INFO:root:Satisfied conditions in 0 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
 DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
-DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_version', '1.0'), ('oauth_nonce', '113225533986177306281478286307'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_timestamp', '1478286307'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('status', 'dog looking into the dusk of evening: And the air with his father, Was his brawny hand.'), ('in_reply_to_status_id', '794435830504947712')]
-DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794435830504947712&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=113225533986177306281478286307&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478286307&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=dog%20looking%20into%20the%20dusk%20of%20evening%3A%20And%20the%20air%20with%20his%20father%2C%20Was%20his%20brawny%20hand.
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '6530780578029663041478294650'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294650'), ('in_reply_to_status_id', '794636304038273024'), ('status', "@ActualLiam\rface glowing o'er a field of battle, then Take a reckoning from there of all, to-night.")]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794636304038273024&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=6530780578029663041478294650&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294650&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40ActualLiam%0Dface%20glowing%20o%27er%20a%20field%20of%20battle%2C%20then%20Take%20a%20reckoning%20from%20there%20of%20all%2C%20to-night.
 DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794435830504947712%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D113225533986177306281478286307%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478286307%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3Ddog%2520looking%2520into%2520the%2520dusk%2520of%2520evening%253A%2520And%2520the%2520air%2520with%2520his%2520father%252C%2520Was%2520his%2520brawny%2520hand.
-DEBUG:oauthlib.oauth1.rfc5849:Signature: 5a2l9yYf/18trRUG+WYHXlUFUW8=
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794636304038273024%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D6530780578029663041478294650%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294650%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540ActualLiam%250Dface%2520glowing%2520o%2527er%2520a%2520field%2520of%2520battle%252C%2520then%2520Take%2520a%2520reckoning%2520from%2520there%2520of%2520all%252C%2520to-night.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: uNaBNN8byzDU8fYaJKmxHhxSN6I=
 DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
 DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept': b'*/*', b'Content-Type': b'application/x-www-form-urlencoded', b'Accept-Encoding': b'gzip, deflate', b'Content-Length': b'139', b'Connection': b'keep-alive', b'User-Agent': b'python-requests/2.11.1', b'Authorization': b'OAuth oauth_nonce="113225533986177306281478286307", oauth_timestamp="1478286307", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="5a2l9yYf%2F18trRUG%2BWYHXlUFUW8%3D"'}
-DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'status=dog+looking+into+the+dusk+of+evening%3A+And+the+air+with+his+father%2C+Was+his+brawny+hand.&in_reply_to_status_id=794435830504947712'
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'157', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="6530780578029663041478294650", oauth_timestamp="1478294650", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="uNaBNN8byzDU8fYaJKmxHhxSN6I%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794636304038273024&status=%40ActualLiam%0Dface+glowing+o%27er+a+field+of+battle%2C+then+Take+a+reckoning+from+there+of+all%2C+to-night.'
 INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
-DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 796
-INFO:root:Using image http://pbs.twimg.com/media/Cv97l2MWcAIe1pb.jpg for reply 792487995693756416
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 872
+INFO:root:Using image http://pbs.twimg.com/media/CwcdX9uVQAENy4Z.jpg for reply 794636183758217216
 INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
-INFO:root:Using labels vehicle,tower
-INFO:root:Trying vehicle
+INFO:root:Using labels cartoon,font
+INFO:root:Trying cartoon
+INFO:root:Found 0 model key pairs
+INFO:root:Trying font
 INFO:root:Found 1 model key pairs
-INFO:root:Trying the pair vehicle thereof.
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Trying tower
-INFO:root:Found 27 model key pairs
-INFO:root:Trying the pair tower swung.
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: None
-INFO:root:Could not use this key pair
-INFO:root:Trying the pair tower A
-INFO:root:Text model responded: tower A thousand bells ring noon, I sail at the sight Had not the same hues which in mild weather crawl out from land By the pinched soil of sin, With the fading light of dews, Deeper than men do bear Through years one hair's-breadth on by heart, And silence at her wheel one afternoon in a college hall: And among the flowers.
-INFO:root:Could not use this key pair
-INFO:root:Text model responded: tower A thousand hearts beat fainter, and dying one, When the flood-gates of the line Completed.
-INFO:root:Satisfied conditions in 1 attempts
-DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client signature_type=AUTH_HEADER, encoding=utf-8, timestamp=None, nonce=None, verifier=None, rsa_key=None, client_secret=****, realm=None, signature_method=HMAC-SHA1, decoding=utf-8, callback_uri=None, client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, resource_owner_secret=****>
+INFO:root:Trying the pair font he
+INFO:root:Text model responded: font he meets The grave old angels, like to swoon Through awful imitation?
+INFO:root:Satisfied conditions in 0 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
 DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
-DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_version', '1.0'), ('oauth_nonce', '81341301125466304561478286309'), ('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_timestamp', '1478286309'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('status', 'tower A thousand hearts beat fainter, and dying one, When the flood-gates of the line Completed.'), ('in_reply_to_status_id', '792487995693756416')]
-DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=792487995693756416&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=81341301125466304561478286309&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478286309&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=tower%20A%20thousand%20hearts%20beat%20fainter%2C%20and%20dying%20one%2C%20When%20the%20flood-gates%20of%20the%20line%20Completed.
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '60533646118282510801478294651'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294651'), ('in_reply_to_status_id', '794636183758217216'), ('status', '@ActualLiam\rfont he meets The grave old angels, like to swoon Through awful imitation?')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794636183758217216&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=60533646118282510801478294651&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294651&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40ActualLiam%0Dfont%20he%20meets%20The%20grave%20old%20angels%2C%20like%20to%20swoon%20Through%20awful%20imitation%3F
 DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D792487995693756416%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D81341301125466304561478286309%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478286309%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3Dtower%2520A%2520thousand%2520hearts%2520beat%2520fainter%252C%2520and%2520dying%2520one%252C%2520When%2520the%2520flood-gates%2520of%2520the%2520line%2520Completed.
-DEBUG:oauthlib.oauth1.rfc5849:Signature: RPguKC/8Uh30Jgm8Evljz3XE51Q=
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794636183758217216%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D60533646118282510801478294651%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294651%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540ActualLiam%250Dfont%2520he%2520meets%2520The%2520grave%2520old%2520angels%252C%2520like%2520to%2520swoon%2520Through%2520awful%2520imitation%253F
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 7zw46N8NGqyvbpudeMmrpByzSUw=
 DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
 DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
-DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept': b'*/*', b'Content-Type': b'application/x-www-form-urlencoded', b'Accept-Encoding': b'gzip, deflate', b'Content-Length': b'148', b'Connection': b'keep-alive', b'User-Agent': b'python-requests/2.11.1', b'Authorization': b'OAuth oauth_nonce="81341301125466304561478286309", oauth_timestamp="1478286309", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="RPguKC%2F8Uh30Jgm8Evljz3XE51Q%3D"'}
-DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'status=tower+A+thousand+hearts+beat+fainter%2C+and+dying+one%2C+When+the+flood-gates+of+the+line+Completed.&in_reply_to_status_id=792487995693756416'
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'142', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="60533646118282510801478294651", oauth_timestamp="1478294651", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="7zw46N8NGqyvbpudeMmrpByzSUw%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794636183758217216&status=%40ActualLiam%0Dfont+he+meets+The+grave+old+angels%2C+like+to+swoon+Through+awful+imitation%3F'
 INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
-DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 808
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 862
+INFO:root:Using image http://pbs.twimg.com/media/CwcdWPcUUAAzYLh.jpg for reply 794636137276981248
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels santa claus,clothing
+INFO:root:Trying santa claus
+INFO:root:Found 0 model key pairs
+INFO:root:Trying clothing
+INFO:root:Found 7 model key pairs
+INFO:root:Trying the pair clothing of
+INFO:root:Text model responded: clothing of war, To fight thy mother here alone, Let none look at a happy pair Every morn and evening, time's Black shadow throws.
+INFO:root:Text model responded: clothing of war, the cruelties of creeds, The list of the spirit; Sweetly to her husband all that sweet mocking call, That soon I take delight in weal, And seek relief in woe; And though my will Be fixed, yet wide my passions rove.
+INFO:root:Text model responded: clothing of war, With these, and the fringe of reeds, And strong brown faces bravely pale For fear some hidden shame, And in silence to a garden.
+INFO:root:Text model responded: clothing of war, save for the mail child Mighty of bone.
+INFO:root:Text model responded: clothing of war, and the sunshine, And the lips of a good fellow, free-mouthed, quick-tempered, not bad-looking, able to overcome and slay his younger brother.
+INFO:root:Text model responded: clothing of war, the share of every minute atom of which I have worn Fetters of flesh is not ended.
+INFO:root:Satisfied conditions in 5 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '169149539810067850541478294653'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294653'), ('in_reply_to_status_id', '794636137276981248'), ('status', '@ActualLiam\rclothing of war, the share of every minute atom of which I have worn Fetters of flesh is not ended.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794636137276981248&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=169149539810067850541478294653&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294653&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40ActualLiam%0Dclothing%20of%20war%2C%20the%20share%20of%20every%20minute%20atom%20of%20which%20I%20have%20worn%20Fetters%20of%20flesh%20is%20not%20ended.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794636137276981248%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D169149539810067850541478294653%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294653%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540ActualLiam%250Dclothing%2520of%2520war%252C%2520the%2520share%2520of%2520every%2520minute%2520atom%2520of%2520which%2520I%2520have%2520worn%2520Fetters%2520of%2520flesh%2520is%2520not%2520ended.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: sLPbMMuA/eJrqNY7aAMZ7FbBKO8=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'165', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="169149539810067850541478294653", oauth_timestamp="1478294653", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="sLPbMMuA%2FeJrqNY7aAMZ7FbBKO8%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794636137276981248&status=%40ActualLiam%0Dclothing+of+war%2C+the+share+of+every+minute+atom+of+which+I+have+worn+Fetters+of+flesh+is+not+ended.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 878
+INFO:root:Using image http://pbs.twimg.com/media/CwcdUKTVQAAZtGk.png for reply 794636101369532417
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels food,dessert
+INFO:root:Trying food
+INFO:root:Found 26 model key pairs
+INFO:root:Trying the pair food For
+INFO:root:Text model responded: food For transient sorrows simple wiles Praise blame love kisses tears and pain, And over it all in white?
+INFO:root:Satisfied conditions in 0 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '22655921115369712661478294654'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294654'), ('in_reply_to_status_id', '794636101369532417'), ('status', '@ActualLiam\rfood For transient sorrows simple wiles Praise blame love kisses tears and pain, And over it all in white?')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794636101369532417&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=22655921115369712661478294654&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294654&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40ActualLiam%0Dfood%20For%20transient%20sorrows%20simple%20wiles%20Praise%20blame%20love%20kisses%20tears%20and%20pain%2C%20And%20over%20it%20all%20in%20white%3F
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794636101369532417%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D22655921115369712661478294654%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294654%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540ActualLiam%250Dfood%2520For%2520transient%2520sorrows%2520simple%2520wiles%2520Praise%2520blame%2520love%2520kisses%2520tears%2520and%2520pain%252C%2520And%2520over%2520it%2520all%2520in%2520white%253F
+DEBUG:oauthlib.oauth1.rfc5849:Signature: nfbRxWUo91Ox6zgYnEeHp1UOuPI=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'174', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="22655921115369712661478294654", oauth_timestamp="1478294654", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="nfbRxWUo91Ox6zgYnEeHp1UOuPI%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794636101369532417&status=%40ActualLiam%0Dfood+For+transient+sorrows+simple+wiles+Praise+blame+love+kisses+tears+and+pain%2C+And+over+it+all+in+white%3F'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 881
+INFO:root:Using image http://pbs.twimg.com/tweet_video_thumb/CwccJ-8WIAE8o8s.jpg for reply 794634840104693760
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels interior design,material
+INFO:root:Trying interior design
+INFO:root:Found 0 model key pairs
+INFO:root:Trying material
+INFO:root:Found 8 model key pairs
+INFO:root:Trying the pair material For
+INFO:root:Text model responded: material For wingèd horses and their cuirasses shine, And I wondered as you please, this plain poor man, Whose only fields are full and rushing boomed through bowed, Tossed, hissing branches.
+INFO:root:Text model responded: material For wingèd horses and the cedars light as thistle-down.
+INFO:root:Text model responded: material For wonder and exceeding thankfulness.
+INFO:root:Text model responded: material For wonder and the sky its wings and legs want play?
+INFO:root:Text model responded: material For wonder and fable, inscrutable, The enveloped mysteries, the old cabin door; The beloved, the sons of beauty,--but behold!
+INFO:root:Text model responded: material For wingèd horses and the little station on the face of thy clime.
+INFO:root:Satisfied conditions in 5 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '3381001864834753991478294656'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294656'), ('in_reply_to_status_id', '794634840104693760'), ('status', '@armoredgorilla\rmaterial For wingèd horses and the little station on the face of thy clime.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794634840104693760&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=3381001864834753991478294656&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294656&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40armoredgorilla%0Dmaterial%20For%20wing%C3%A8d%20horses%20and%20the%20little%20station%20on%20the%20face%20of%20thy%20clime.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794634840104693760%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D3381001864834753991478294656%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294656%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540armoredgorilla%250Dmaterial%2520For%2520wing%25C3%25A8d%2520horses%2520and%2520the%2520little%2520station%2520on%2520the%2520face%2520of%2520thy%2520clime.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: PMaKrHxK/zpwRV6sDDWbm2WFUO8=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'148', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="3381001864834753991478294656", oauth_timestamp="1478294656", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="PMaKrHxK%2FzpwRV6sDDWbm2WFUO8%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794634840104693760&status=%40armoredgorilla%0Dmaterial+For+wing%C3%A8d+horses+and+the+little+station+on+the+face+of+thy+clime.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 869
+INFO:root:Using image http://pbs.twimg.com/media/Cwcbc-iW8AEo8BA.jpg for reply 794634052389208064
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels red,signage
+INFO:root:Trying red
+INFO:root:Found 235 model key pairs
+INFO:root:Trying the pair red scaur
+INFO:root:Text model responded: red scaur flings the proudest of them all!
+INFO:root:Text model responded: red scaur flings the white-streaming water, Leaping and flickering around me; Living beings, identities, now doubtless near us when they were men Who meant and did not hear your set speeches that start In some cool room that's open to the end-- I have lost the third belong those who are you, nor am I not know that what we cannot sing, we'll say Something to keep the dead, Brave Songs! with sleepless care Hovered the young men all assembled In the strength that is our good, And unblessed good is also real,--it too is a division of cattle, might ruminate in the grave where lay a long time may grow out of this vessel stall belong.
+INFO:root:Text model responded: red scaur flings the white-streaming water, Leaping and flashing of distant matin bells.
+INFO:root:Satisfied conditions in 2 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '133739054413844981591478294658'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294658'), ('in_reply_to_status_id', '794634052389208064'), ('status', '@streetlamp\rred scaur flings the white-streaming water, Leaping and flashing of distant matin bells.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794634052389208064&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=133739054413844981591478294658&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294658&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40streetlamp%0Dred%20scaur%20flings%20the%20white-streaming%20water%2C%20Leaping%20and%20flashing%20of%20distant%20matin%20bells.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794634052389208064%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D133739054413844981591478294658%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294658%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540streetlamp%250Dred%2520scaur%2520flings%2520the%2520white-streaming%2520water%252C%2520Leaping%2520and%2520flashing%2520of%2520distant%2520matin%2520bells.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: gw6NkMUIk/yraHCSL2/nDP5DGGE=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'154', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="133739054413844981591478294658", oauth_timestamp="1478294658", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="gw6NkMUIk%2FyraHCSL2%2FnDP5DGGE%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794634052389208064&status=%40streetlamp%0Dred+scaur+flings+the+white-streaming+water%2C+Leaping+and+flashing+of+distant+matin+bells.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 874
+INFO:root:Using image http://pbs.twimg.com/media/CwcbZ6hXEAApvVk.jpg for reply 794634002443497472
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels mammal,room
+INFO:root:Trying mammal
+INFO:root:Found 0 model key pairs
+INFO:root:Trying room
+INFO:root:Found 51 model key pairs
+INFO:root:Trying the pair room then
+INFO:root:Text model responded: room then glided the glistening savage, Bearing the seed of shame, A thousand years Their virtues love their faults condemn, Partake their hopes what overjoyed replies!
+INFO:root:Text model responded: room then glided the glistening bayonet, Each soldier's eye shall glisten the loveliest amber That ever blest a thing To steal from Thee one secret can save you though I would not end in twilight gray.
+INFO:root:Text model responded: room then glided the glistening leaf, in the air with blackness, and hung to her shame, Lo, they give us better men.
+INFO:root:Satisfied conditions in 2 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '142861919468439651691478294659'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294659'), ('in_reply_to_status_id', '794634002443497472'), ('status', '@AmyLeighP\rroom then glided the glistening leaf, in the air with blackness, and hung to her shame, Lo, they give us better men.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794634002443497472&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=142861919468439651691478294659&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294659&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40AmyLeighP%0Droom%20then%20glided%20the%20glistening%20leaf%2C%20in%20the%20air%20with%20blackness%2C%20and%20hung%20to%20her%20shame%2C%20Lo%2C%20they%20give%20us%20better%20men.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794634002443497472%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D142861919468439651691478294659%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294659%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540AmyLeighP%250Droom%2520then%2520glided%2520the%2520glistening%2520leaf%252C%2520in%2520the%2520air%2520with%2520blackness%252C%2520and%2520hung%2520to%2520her%2520shame%252C%2520Lo%252C%2520they%2520give%2520us%2520better%2520men.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 2LolTbf22wyzKhu+QDEkHwk8aRc=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'187', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="142861919468439651691478294659", oauth_timestamp="1478294659", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="2LolTbf22wyzKhu%2BQDEkHwk8aRc%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794634002443497472&status=%40AmyLeighP%0Droom+then+glided+the+glistening+leaf%2C+in+the+air+with+blackness%2C+and+hung+to+her+shame%2C+Lo%2C+they+give+us+better+men.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 879
+INFO:root:Using image http://pbs.twimg.com/media/CwcbLV6UAAA1P3R.jpg for reply 794633754115448836
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels family car,vehicle registration plate
+INFO:root:Trying family car
+INFO:root:Found 0 model key pairs
+INFO:root:Trying vehicle registration plate
+INFO:root:Found 0 model key pairs
+INFO:root:None of the seed words worked
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '55898672871888301441478294660'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294660'), ('in_reply_to_status_id', '794633754115448836'), ('status', '@Blockaderunner5\rIn the church with men.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633754115448836&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=55898672871888301441478294660&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294660&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40Blockaderunner5%0DIn%20the%20church%20with%20men.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633754115448836%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D55898672871888301441478294660%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294660%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540Blockaderunner5%250DIn%2520the%2520church%2520with%2520men.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 4sXTwelpuCFevmdQrFZrHJgVklQ=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'92', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="55898672871888301441478294660", oauth_timestamp="1478294660", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="4sXTwelpuCFevmdQrFZrHJgVklQ%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633754115448836&status=%40Blockaderunner5%0DIn+the+church+with+men.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 839
+INFO:root:Using image http://pbs.twimg.com/media/CwcbJQ0VIAA5h4y.jpg for reply 794633713518780416
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels mammal,nose
+INFO:root:Trying mammal
+INFO:root:Found 0 model key pairs
+INFO:root:Trying nose
+INFO:root:Found 14 model key pairs
+INFO:root:Trying the pair nose is
+INFO:root:Text model responded: nose is thin, And it rises again, Without haste, Winged and curving, Tracing its white alike our graves, our gain!
+INFO:root:Satisfied conditions in 0 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '6538994951062153111478294662'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294662'), ('in_reply_to_status_id', '794633713518780416'), ('status', '@joshuargilliam\rnose is thin, And it rises again, Without haste, Winged and curving, Tracing its white alike our graves, our gain!')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633713518780416&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=6538994951062153111478294662&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294662&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40joshuargilliam%0Dnose%20is%20thin%2C%20And%20it%20rises%20again%2C%20Without%20haste%2C%20Winged%20and%20curving%2C%20Tracing%20its%20white%20alike%20our%20graves%2C%20our%20gain%21
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633713518780416%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D6538994951062153111478294662%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294662%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540joshuargilliam%250Dnose%2520is%2520thin%252C%2520And%2520it%2520rises%2520again%252C%2520Without%2520haste%252C%2520Winged%2520and%2520curving%252C%2520Tracing%2520its%2520white%2520alike%2520our%2520graves%252C%2520our%2520gain%2521
+DEBUG:oauthlib.oauth1.rfc5849:Signature: N3TdsXU9iEMbtx1EqOBHMQEC0TY=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'194', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="6538994951062153111478294662", oauth_timestamp="1478294662", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="N3TdsXU9iEMbtx1EqOBHMQEC0TY%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633713518780416&status=%40joshuargilliam%0Dnose+is+thin%2C+And+it+rises+again%2C+Without+haste%2C+Winged+and+curving%2C+Tracing+its+white+alike+our+graves%2C+our+gain%21'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 886
+INFO:root:Using image http://pbs.twimg.com/media/CwcbIsSUAAAhWzp.jpg for reply 794633704849215489
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels mammal,vertebrate
+INFO:root:Trying mammal
+INFO:root:Found 0 model key pairs
+INFO:root:Trying vertebrate
+INFO:root:Found 0 model key pairs
+INFO:root:None of the seed words worked
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '174154331829819171971478294663'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294663'), ('in_reply_to_status_id', '794633704849215489'), ('status', '@SmokeyQRivers\rO, let the green-white water, the path near by Into the dark hulk and thrilled its crew with glee.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633704849215489&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=174154331829819171971478294663&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294663&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40SmokeyQRivers%0DO%2C%20let%20the%20green-white%20water%2C%20the%20path%20near%20by%20Into%20the%20dark%20hulk%20and%20thrilled%20its%20crew%20with%20glee.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633704849215489%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D174154331829819171971478294663%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294663%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540SmokeyQRivers%250DO%252C%2520let%2520the%2520green-white%2520water%252C%2520the%2520path%2520near%2520by%2520Into%2520the%2520dark%2520hulk%2520and%2520thrilled%2520its%2520crew%2520with%2520glee.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 5wSC0gZp76I4Ome2hPeLAD9Fd7k=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'169', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="174154331829819171971478294663", oauth_timestamp="1478294663", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="5wSC0gZp76I4Ome2hPeLAD9Fd7k%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633704849215489&status=%40SmokeyQRivers%0DO%2C+let+the+green-white+water%2C+the+path+near+by+Into+the+dark+hulk+and+thrilled+its+crew+with+glee.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 880
+INFO:root:Using image http://pbs.twimg.com/media/Cwca-_uVEAAZsL3.jpg for reply 794633538238705664
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels cartoon,screenshot
+INFO:root:Trying cartoon
+INFO:root:Found 0 model key pairs
+INFO:root:Trying screenshot
+INFO:root:Found 0 model key pairs
+INFO:root:None of the seed words worked
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '156758121473259995751478294665'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294665'), ('in_reply_to_status_id', '794633538238705664'), ('status', "@AaronABCP\rTherefore, more beauteous than the insect's hum.")]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633538238705664&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=156758121473259995751478294665&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294665&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40AaronABCP%0DTherefore%2C%20more%20beauteous%20than%20the%20insect%27s%20hum.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633538238705664%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D156758121473259995751478294665%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294665%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540AaronABCP%250DTherefore%252C%2520more%2520beauteous%2520than%2520the%2520insect%2527s%2520hum.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: mUpTmk3lqH21TT38EvwUXX4k+Bw=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'115', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="156758121473259995751478294665", oauth_timestamp="1478294665", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="mUpTmk3lqH21TT38EvwUXX4k%2BBw%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633538238705664&status=%40AaronABCP%0DTherefore%2C+more+beauteous+than+the+insect%27s+hum.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 855
+INFO:root:Using image http://pbs.twimg.com/media/CwcawmxXEAEen6P.jpg for reply 794633295594221568
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels cat,mammal
+INFO:root:Trying cat
+INFO:root:Found 2 model key pairs
+INFO:root:Trying the pair cat in
+INFO:root:Text model responded: cat in lap, With beautiful drooping head, with idle sail; And then he walked: And Statius, who erewhile no little space we resting stood, To watch thy fading mansion spend?
+INFO:root:Text model responded: cat in lap, With beautiful drooping head, with idle elbow on the mountains clothed and curled, With forest ruffling to the straths and green the signals and the orchard.
+INFO:root:Text model responded: cat in lap, With beautiful drooping head, with idle breath?
+INFO:root:Text model responded: cat in lap, With beautiful drooping head, and lift the head!
+INFO:root:Text model responded: cat in lap, With beautiful drooping head, with idle breath?
+INFO:root:Text model responded: cat in lap, With beautiful drooping head, with idle elbow on the ceiling beams.
+INFO:root:Satisfied conditions in 5 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '107305412233860570581478294666'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294666'), ('in_reply_to_status_id', '794633295594221568'), ('status', '@VoxPVoxD\rcat in lap, With beautiful drooping head, with idle elbow on the ceiling beams.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633295594221568&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=107305412233860570581478294666&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294666&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40VoxPVoxD%0Dcat%20in%20lap%2C%20With%20beautiful%20drooping%20head%2C%20with%20idle%20elbow%20on%20the%20ceiling%20beams.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633295594221568%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D107305412233860570581478294666%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294666%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540VoxPVoxD%250Dcat%2520in%2520lap%252C%2520With%2520beautiful%2520drooping%2520head%252C%2520with%2520idle%2520elbow%2520on%2520the%2520ceiling%2520beams.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: tEwnrcJHkJDPYWlXxz07qq3aXus=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'145', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="107305412233860570581478294666", oauth_timestamp="1478294666", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="tEwnrcJHkJDPYWlXxz07qq3aXus%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633295594221568&status=%40VoxPVoxD%0Dcat+in+lap%2C+With+beautiful+drooping+head%2C+with+idle+elbow+on+the+ceiling+beams.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 868
+INFO:root:Using image http://pbs.twimg.com/media/Cwcask6VQAExYHU.jpg for reply 794633218787983360
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels cat,mammal
+INFO:root:Trying cat
+INFO:root:Found 2 model key pairs
+INFO:root:Trying the pair cat has
+INFO:root:Text model responded: cat has run through; I clambered out and trample down The ripe germs of Empire.
+INFO:root:Satisfied conditions in 0 attempts
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '130911922230830410981478294668'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294668'), ('in_reply_to_status_id', '794633218787983360'), ('status', '@liesandperfidy\rcat has run through; I clambered out and trample down The ripe germs of Empire.')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633218787983360&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=130911922230830410981478294668&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294668&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40liesandperfidy%0Dcat%20has%20run%20through%3B%20I%20clambered%20out%20and%20trample%20down%20The%20ripe%20germs%20of%20Empire.
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633218787983360%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D130911922230830410981478294668%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294668%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540liesandperfidy%250Dcat%2520has%2520run%2520through%253B%2520I%2520clambered%2520out%2520and%2520trample%2520down%2520The%2520ripe%2520germs%2520of%2520Empire.
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 4OTWEUTasi4QybkopLxZaPW2wQw=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'149', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="130911922230830410981478294668", oauth_timestamp="1478294668", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="4OTWEUTasi4QybkopLxZaPW2wQw%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633218787983360&status=%40liesandperfidy%0Dcat+has+run+through%3B+I+clambered+out+and+trample+down+The+ripe+germs+of+Empire.'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 872
+INFO:root:Using image http://pbs.twimg.com/media/Cwcarh3UoAAqGJo.jpg for reply 794633199020191744
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json
+INFO:root:Using labels baseball positions
+INFO:root:Trying baseball positions
+INFO:root:Found 0 model key pairs
+INFO:root:None of the seed words worked
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [POST]> using client <Client client_key=KJ5qiyO5Yy0jXso7dFFs37sDq, signature_type=AUTH_HEADER, realm=None, rsa_key=None, callback_uri=None, resource_owner_key=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A, decoding=utf-8, nonce=None, encoding=utf-8, client_secret=****, signature_method=HMAC-SHA1, verifier=None, timestamp=None, resource_owner_secret=****>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: True
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('oauth_token', '791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A'), ('oauth_nonce', '16050182903052396301478294669'), ('oauth_consumer_key', 'KJ5qiyO5Yy0jXso7dFFs37sDq'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_timestamp', '1478294669'), ('in_reply_to_status_id', '794633199020191744'), ('status', '@chicken__puppet\rYou ruled a field of strife, Who gave its name Alcyone!')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: in_reply_to_status_id=794633199020191744&oauth_consumer_key=KJ5qiyO5Yy0jXso7dFFs37sDq&oauth_nonce=16050182903052396301478294669&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1478294669&oauth_token=791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A&oauth_version=1.0&status=%40chicken__puppet%0DYou%20ruled%20a%20field%20of%20strife%2C%20Who%20gave%20its%20name%20Alcyone%21
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:oauthlib.oauth1.rfc5849:Base signing string: POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&in_reply_to_status_id%3D794633199020191744%26oauth_consumer_key%3DKJ5qiyO5Yy0jXso7dFFs37sDq%26oauth_nonce%3D16050182903052396301478294669%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1478294669%26oauth_token%3D791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A%26oauth_version%3D1.0%26status%3D%2540chicken__puppet%250DYou%2520ruled%2520a%2520field%2520of%2520strife%252C%2520Who%2520gave%2520its%2520name%2520Alcyone%2521
+DEBUG:oauthlib.oauth1.rfc5849:Signature: KHcbKth5bn6YmM+czmuvB6ngLmc=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/update.json
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'Accept-Encoding': b'gzip, deflate', b'User-Agent': b'python-requests/2.11.1', b'Content-Length': b'128', b'Content-Type': b'application/x-www-form-urlencoded', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="16050182903052396301478294669", oauth_timestamp="1478294669", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="KJ5qiyO5Yy0jXso7dFFs37sDq", oauth_token="791840255079055360-mndubzxfVsdkBL7CFv1iCLHOHghe60A", oauth_signature="KHcbKth5bn6YmM%2BczmuvB6ngLmc%3D"', b'Accept': b'*/*'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: b'in_reply_to_status_id=794633199020191744&status=%40chicken__puppet%0DYou+ruled+a+field+of+strife%2C+Who+gave+its+name+Alcyone%21'
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com
+DEBUG:requests.packages.urllib3.connectionpool:"POST /1.1/statuses/update.json HTTP/1.1" 200 859
+INFO:root:Using image http://pbs.twimg.com/media/CwcaiYhXEAAvZqb.jpg for reply 794633056858599424
+INFO:googleapiclient.discovery:URL being requested: POST https://vision.googleapis.com/v1/images:annotate?alt=json

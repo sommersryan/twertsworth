@@ -1,9 +1,9 @@
 import json, markovify, random, logging
 from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING
 
-def writePoem(textModel, seedWords):
+def writePoem(textModel, seedWords, tweetPrefix):
 	modelKeys = list(textModel.chain.model)
-	
+	tweetRoom = MAX_CHAR - len(tweetPrefix) #need to keep track of how many chars we have for the tweet
 	for word in seedWords:
 		logging.info('Trying %s',word)
 		results = [v for i, v in enumerate(modelKeys) if v[0] == word]
@@ -16,10 +16,10 @@ def writePoem(textModel, seedWords):
 					poem = textModel.make_sentence_with_start(' '.join(result))
 					logging.info('Text model responded: %s',poem)
 					if poem:
-						if MIN_CHAR <= len(poem) <= MAX_CHAR:
+						if MIN_CHAR <= len(poem) <= tweetRoom:
 							logging.info("Satisfied conditions in %s attempts",t)
-							return poem
+							return tweetPrefix + poem
 					else:
 						logging.info('Could not use this key pair')
 	logging.info("None of the seed words worked")
-	return textModel.make_short_sentence(140)
+	return tweetPrefix + textModel.make_short_sentence(tweetRoom)

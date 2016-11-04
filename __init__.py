@@ -6,15 +6,22 @@ logging.basicConfig(filename='runtime.log', filemode='w', level=logging.DEBUG)
 req = urllib.request.Request(CORPUS_URL)
 with urllib.request.urlopen(req) as corpusSource:
 	textModel = markovify.Text(corpusSource.read().decode(ENCODING))
-	
-sourceReplies = [tweet.getMediaURL(a) for a in tweet.checkReplies()] #this should be a list of tuples with the ID of each reply and the URLs of the media in them
-logging.info('Processing replies %s'," ".join([r[0] for r in sourceReplies]))
 
-for reply in sourceReplies:
-	random.shuffle(reply[1]) #pick a rando image
-	logging.info('Using image %s for reply %s',reply[1][0],reply[0])
-	imageLabels = vision.getLabels(reply[1][0])
+newReplies = tweet.checkReplies()
+mediaReplies = []
+
+for reply in newReplies:
+	if reply.media:
+		mediaReplies.append(reply)
+
+toDoList = [tweet.getMediaURL(a) for a in mediaReplies] #make list of tuples with the necessary info for each reply
+logging.info('Processing replies %s'," ".join([r[0] for r in toDoList]))
+
+for reply in toDoList:
+	random.shuffle(reply[2]) #going to randomize the order and just pick the first one
+	logging.info('Using image %s for reply %s',reply[2][0],reply[0])
+	imageLabels = vision.getLabels(reply[2][0])
 	logging.info('Using labels %s',','.join(imageLabels[:2]))
-	tweetText = compose.writePoem(textModel,imageLabels[:2])
-	tweet.replyTo(tweetText,reply[0]) #does reply ID need to be string or int hmmm
+	tweetText = compose.writePoem(textModel,imageLabels[:2],reply[1])
+	tweet.replyTo(tweetText,int(reply[0])) #reply ID needs to be int
 	
