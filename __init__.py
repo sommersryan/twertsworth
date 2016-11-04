@@ -1,7 +1,7 @@
 import compose, tweet, vision, urllib.request, markovify, random, logging
 from config import CORPUS_URL, ENCODING
 
-logging.basicConfig(filename='runtime.log', filemode='w', level=logging.DEBUG)
+logging.basicConfig(filename='runtime.log', level=logging.DEBUG)
 
 req = urllib.request.Request(CORPUS_URL)
 with urllib.request.urlopen(req) as corpusSource:

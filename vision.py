@@ -24,5 +24,8 @@ def getLabels(imageURL):
 										]}
 							]})
 		response = service_request.execute()
-		labels = [label['description'] for label in response['responses'][0]['labelAnnotations']] #heard u liked list comprehensions 
+		try:
+			labels = [label['description'] for label in response['responses'][0]['labelAnnotations']] #heard u liked list comprehensions 
+		except KeyError:
+			labels = [' ',' '] #return a blank list if Google can't find any labels
 		return labels
