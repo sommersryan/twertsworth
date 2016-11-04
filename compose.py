@@ -1,10 +1,6 @@
 import json, markovify, random
 from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING
 
-def loadModel(corpus):
-	with open(corpus,encoding=ENCODING) as corpusFile:
-		return markovify.Text(corpusFile.read())
-
 def writePoem(textModel, seedWords):
 	modelKeys = list(textModel.chain.model)
 	
@@ -18,3 +14,4 @@ def writePoem(textModel, seedWords):
 					if MIN_CHAR <= len(poem) <= MAX_CHAR:
 						print ("took " + str(t) + " attempts")
 						return poem
+	return textModel.make_short_sentence(140)
