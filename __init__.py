@@ -11,5 +11,6 @@ for reply in sourceReplies:
 	random.shuffle(reply[1]) #pick a rando image
 	imageLabels = vision.getLabels(reply[1][0])
 	
-	tweet = compose.writePoem(textModel,imageLabels[:2])
+	tweetText = compose.writePoem(textModel,imageLabels[:2])
+	tweet.replyTo(tweetText,reply[0]) #does reply ID need to be string or int hmmm
 	
