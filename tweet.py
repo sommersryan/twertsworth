@@ -1,4 +1,4 @@
-import config, twitter, os, logging
+import config, twitter, os, logging, static
 
 api = twitter.Api(
 					consumer_key = config.CONSUMER_KEY,
@@ -15,10 +15,10 @@ def post(tweet):
 	return "Tweeted " + tweet 
 
 def checkReplies():
-	lastReply = os.environ.get("LASTREPLY") or '792210713766924288' #arbitrary sinceId for an old tweet
-	replies = api.GetMentions(since_id = lastReply)
+	since_id = static.since_id
+	replies = api.GetMentions(since_id = since_id)
 	if replies: 
-		os.environ["LASTREPLY"] = replies[-1].id_str
+		static.datastore.get_key('since_id').set_contents_from_string(sorted([reply.id_str for reply in replies])[-1]) #stores new sinceID in the S3 bucket
 	logging.info('Obtained statuses: %s',','.join([reply.id_str for reply in replies]))
 	return replies
 	

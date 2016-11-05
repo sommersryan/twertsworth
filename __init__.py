@@ -1,4 +1,4 @@
-import compose, tweet, vision, urllib.request, markovify, random, logging
+import compose, tweet, vision, static, urllib.request, markovify, random, logging
 from config import CORPUS_URL, ENCODING
 
 logging.basicConfig(filename='runtime.log', level=logging.DEBUG)
@@ -10,7 +10,7 @@ with urllib.request.urlopen(req) as corpusSource:
 newReplies = tweet.checkReplies()
 mediaReplies = []
 
-for reply in newReplies:
+for reply in newReplies: #just take the replies with pictures
 	if reply.media:
 		mediaReplies.append(reply)
 

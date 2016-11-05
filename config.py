@@ -14,3 +14,7 @@ MAX_CHAR = 140 #the tweeter's burden
 ATTEMPTS = 10 #number of times we'll try to make a suitable tweet for each model key
 
 ENCODING = 'UTF-8' #encoding of your corpus file, mine is from Gutenberg ebooks so it's UTF-8
+
+#s3 keys for static storage with Heroku 
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID") or ''
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY") or ''
