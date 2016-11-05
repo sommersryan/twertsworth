@@ -3,18 +3,18 @@ from config import CORPUS_URL, ENCODING
 
 logging.basicConfig(filename='runtime.log', level=logging.DEBUG)
 
+
+
+req = urllib.request.Request(CORPUS_URL)
+with urllib.request.urlopen(req) as corpusSource:
+	textModel = markovify.Text(corpusSource.read().decode(ENCODING))
+	
+with open('google_credentials','wb') as credentialsFile:
+	credentialsFile.write(static.getGoogleCredentials())
+	
+import vision
+
 while True:
-
-	req = urllib.request.Request(CORPUS_URL)
-	with urllib.request.urlopen(req) as corpusSource:
-		textModel = markovify.Text(corpusSource.read().decode(ENCODING))
-	
-	with open('tmp/google_credentials','wb') as credentialsFile:
-		credentialsFile.write(static.getGoogleCredentials())
-	
-	import vision
-
-
 
 	newReplies = tweet.checkReplies()
 	mediaReplies = []
