@@ -16,4 +16,4 @@ def resetSinceID():
 	return True
 	
 def getGoogleCredentials():
-	return datastore.get_key('google_credentials').get_contents_as_string)()
+	return datastore.get_key('google_credentials').get_contents_as_string()
