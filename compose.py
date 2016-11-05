@@ -18,8 +18,18 @@ def writePoem(textModel, seedWords, tweetPrefix):
 					if poem:
 						if MIN_CHAR <= len(poem) <= tweetRoom:
 							logging.info("Satisfied conditions in %s attempts",t)
-							return tweetPrefix + poem
+							
+							#Capitalize first letter
+							
+							listChars = list(poem)
+							listChars[0] = listChars[0].upper()
+							finalPoem = "".join(listChars)
+							return tweetPrefix + finalPoem
 					else:
 						logging.info('Could not use this key pair')
 	logging.info("None of the seed words worked")
-	return tweetPrefix + textModel.make_short_sentence(tweetRoom)
+	genericPoem = textModel.make_short_sentence(tweetRoom)
+	listChars = list(genericPoem)
+	listChars[0] = listChars[0].upper()
+	finalPoem = "".join(listChars)
+	return tweetPrefix + finalPoem

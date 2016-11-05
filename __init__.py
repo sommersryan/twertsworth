@@ -36,7 +36,6 @@ for reply in toDoList:
 	logging.info('Using labels %s',','.join(imageLabels[:2]))
 	tweetText = compose.writePoem(textModel,imageLabels[:2],reply[1])
 	tweetCharList = list(tweetText)
-	tweetCharList[0] = tweetCharList[0].upper()
 	finalCharList = [w.replace(',','\r') for w in tweetCharList]
 	finalTweet = "".join(finalCharList)
 	tweet.replyTo(finalTweet,int(reply[0])) #Reply ID needs to be int
