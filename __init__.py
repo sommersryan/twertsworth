@@ -6,6 +6,9 @@ logging.basicConfig(filename='runtime.log', level=logging.DEBUG)
 req = urllib.request.Request(CORPUS_URL)
 with urllib.request.urlopen(req) as corpusSource:
 	textModel = markovify.Text(corpusSource.read().decode(ENCODING))
+	
+with open('tmp/google_credentials','w') as credentialsFile:
+	credentialsFile.write(static.getGoogleCredentials())
 
 newReplies = tweet.checkReplies()
 mediaReplies = []

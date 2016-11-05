@@ -1,6 +1,8 @@
-import json, base64, urllib.request, static
+import json, base64, urllib.request, static, os
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'tmp/google_credentials' #this allows get_application_default
 
 credentials = GoogleCredentials.get_application_default()
 service = discovery.build('vision', 'v1', credentials=credentials)
