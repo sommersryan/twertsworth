@@ -1,4 +1,4 @@
-import json, base64, urllib.request
+import json, base64, urllib.request, static
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
 

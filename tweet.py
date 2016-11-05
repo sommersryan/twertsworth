@@ -15,10 +15,10 @@ def post(tweet):
 	return "Tweeted " + tweet 
 
 def checkReplies():
-	since_id = static.since_id
+	since_id = static.getSinceID()
 	replies = api.GetMentions(since_id = since_id)
 	if replies: 
-		static.datastore.get_key('since_id').set_contents_from_string(sorted([reply.id_str for reply in replies])[-1]) #stores new sinceID in the S3 bucket
+		static.setSinceID(sorted([reply.id_str for reply in replies])[-1]) #stores new sinceID in the S3 bucket
 	logging.info('Obtained statuses: %s',','.join([reply.id_str for reply in replies]))
 	return replies
 	
