@@ -12,31 +12,34 @@ with open('tmp/google_credentials','wb') as credentialsFile:
 	
 import vision
 
-newReplies = tweet.checkReplies()
-mediaReplies = []
+while True:
 
-#Just take the replies with pictures
+	newReplies = tweet.checkReplies()
+	mediaReplies = []
 
-for reply in newReplies: 
-	if reply.media:
-		mediaReplies.append(reply)
+	#Just take the replies with pictures
 
-#Make list of tuples with the necessary info for each reply
+	for reply in newReplies: 
+		if reply.media:
+			mediaReplies.append(reply)
+
+	#Make list of tuples with the necessary info for each reply
 		
-toDoList = [tweet.getMediaURL(a) for a in mediaReplies] 
-logging.info('Processing replies %s'," ".join([r[0] for r in toDoList]))
+	toDoList = [tweet.getMediaURL(a) for a in mediaReplies] 
+	logging.info('Processing replies %s'," ".join([r[0] for r in toDoList]))
 
-for reply in toDoList:
+	for reply in toDoList:
 
-	#Going to randomize the order and just pick the first one
+		#Going to randomize the order and just pick the first one
 	
-	random.shuffle(reply[2])
-	logging.info('Using image %s for reply %s',reply[2][0],reply[0])
-	imageLabels = vision.getLabels(reply[2][0])
-	logging.info('Using labels %s',','.join(imageLabels[:2]))
-	tweetText = compose.writePoem(textModel,imageLabels[:2],reply[1])
-	tweetCharList = list(tweetText)
-	finalCharList = [w.replace(',','\r') for w in tweetCharList]
-	finalTweet = "".join(finalCharList)
-	tweet.replyTo(finalTweet,int(reply[0])) #Reply ID needs to be int
+		random.shuffle(reply[2])
+		logging.info('Using image %s for reply %s',reply[2][0],reply[0])
+		imageLabels = vision.getLabels(reply[2][0])
+		logging.info('Using labels %s',','.join(imageLabels[:2]))
+		tweetText = compose.writePoem(textModel,imageLabels[:2],reply[1])
+		tweetCharList = list(tweetText)
+		finalCharList = [w.replace(',','\r') for w in tweetCharList]
+		finalTweet = "".join(finalCharList)
+		tweet.replyTo(finalTweet,int(reply[0])) #Reply ID needs to be int
 	
+	time.sleep(60)
