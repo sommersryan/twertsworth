@@ -1,4 +1,4 @@
-import compose, tweet, static, urllib.request, markovify, random, logging
+import compose, tweet, static, urllib.request, markovify, random, logging, time
 from config import CORPUS_URL, ENCODING
 
 logging.basicConfig(filename='runtime.log', level=logging.DEBUG)
