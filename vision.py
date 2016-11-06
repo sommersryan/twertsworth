@@ -2,8 +2,6 @@ import json, base64, urllib.request, static, os, logging
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'google_credentials' #this allows get_application_default
-
 logging.info("Credential file location added.")
 
 credentials = GoogleCredentials.get_application_default()
