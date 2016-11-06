@@ -44,7 +44,7 @@ def getLabels(imageURL):
 		
 		try:
 			labels = [label['description'] for label in response['responses'][0]['labelAnnotations']] #heard u liked list comprehensions 
-			logging.info("Labels retrieved: %s",",".join[a for a in labels])
+			logging.info("Labels retrieved: %s",','.join([a for a in labels]))
 		except KeyError:
 			labels = [' ',' '] #return a blank list if Google can't find any labels
 			logging.info("No labels acquired, returning blanks.")
