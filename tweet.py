@@ -17,8 +17,6 @@ def post(tweet):
 def checkReplies():
 	since_id = static.getSinceID()
 	replies = api.GetMentions(since_id = since_id)
-	if replies: 
-		static.setSinceID(sorted([reply.id_str for reply in replies])[-1]) #stores new sinceID in the S3 bucket
 	logging.info('Obtained statuses: %s',','.join([reply.id_str for reply in replies]))
 	return replies
 	

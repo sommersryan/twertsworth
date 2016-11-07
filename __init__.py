@@ -44,5 +44,5 @@ while True:
 		finalCharList = [w.replace(',','\r') for w in tweetCharList]
 		finalTweet = "".join(finalCharList)
 		tweet.replyTo(finalTweet,int(reply[0])) #Reply ID needs to be int
-	
+		static.setSinceID(reply[0])
 	time.sleep(60)
