@@ -6,7 +6,7 @@ def writePoem(textModel, seedWords, tweetPrefix):
 	tweetRoom = MAX_CHAR - len(tweetPrefix) #need to keep track of how many chars we have for the tweet
 	random.shuffle(seedWords)
 	for word in seedWords:
-		if word == 'Person':
+		if word == 'person':
 			continue
 		logging.info('Trying %s',word)
 		results = [v for i, v in enumerate(modelKeys) if v[0] == word]
