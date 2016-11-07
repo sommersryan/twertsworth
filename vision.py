@@ -1,6 +1,10 @@
-import json, base64, urllib.request, static, os, logging
+import json, base64, urllib.request, static, os, logging, httplib2
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
+
+API_DISCOVERY_FILE = 'https://vision.googleapis.com/$discovery/rest?version=v1'
+http = httplib2.Http()
+
 
 logging.info("Credential file location added.")
 
@@ -8,7 +12,7 @@ credentials = GoogleCredentials.get_application_default()
 
 logging.info("Credentials retrieved.")
 
-service = discovery.build('vision', 'v1', credentials=credentials)
+service = discovery.build('vision', 'v1', http, discoveryServiceUrl=API_DISCOVERY_FILE, credentials=credentials)
 
 logging.info("Service built successfully.")
 
