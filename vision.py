@@ -40,7 +40,7 @@ def getLabels(imageURL):
 							
 		logging.info("Request built.")
 		
-		response = service_request.execute()
+		response = service_request.execute(num_retries=5)
 		
 		logging.info("Request executed successfully.")
 		
