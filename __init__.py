@@ -3,13 +3,11 @@ from config import CORPUS_URL, ENCODING
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
-
-
 req = urllib.request.Request(CORPUS_URL)
+
 with urllib.request.urlopen(req) as corpusSource:
 	textModel = markovify.Text(corpusSource.read().decode(ENCODING))
 	
-
 while True:
 
 	with open('google_credentials','wb') as credentialsFile:
@@ -44,5 +42,6 @@ while True:
 		finalCharList = [w.replace(',','\r') for w in tweetCharList]
 		finalTweet = "".join(finalCharList)
 		tweet.replyTo(finalTweet,int(reply[0])) #Reply ID needs to be int
-		static.setSinceID(reply[0])
+		if int(static.getSinceID()) < int(reply[0]):
+			static.setSinceID(reply[0])
 	time.sleep(60)
