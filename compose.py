@@ -4,7 +4,10 @@ from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING
 def writePoem(textModel, seedWords, tweetPrefix):
 	modelKeys = list(textModel.chain.model)
 	tweetRoom = MAX_CHAR - len(tweetPrefix) #need to keep track of how many chars we have for the tweet
+	random.shuffle(seedWords)
 	for word in seedWords:
+		if word == 'Person':
+			pass
 		logging.info('Trying %s',word)
 		results = [v for i, v in enumerate(modelKeys) if v[0] == word]
 		logging.info('Found %s model key pairs',len(results))
