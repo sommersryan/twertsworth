@@ -36,8 +36,8 @@ while True:
 		random.shuffle(reply[2])
 		logging.info('Using image %s for reply %s',reply[2][0],reply[0])
 		imageLabels = vision.getLabels(reply[2][0])
-		logging.info('Using labels %s',','.join(imageLabels[:2]))
-		tweetText = compose.writePoem(textModel,imageLabels[:2],reply[1])
+		logging.info('Using labels %s',','.join(imageLabels))
+		tweetText = compose.writePoem(textModel,imageLabels,reply[1])
 		tweetCharList = list(tweetText)
 		finalCharList = [w.replace(',','\r') for w in tweetCharList]
 		finalTweet = "".join(finalCharList)
