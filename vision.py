@@ -5,7 +5,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 API_DISCOVERY_FILE = 'https://vision.googleapis.com/$discovery/rest?version=v1'
 http = httplib2.Http()
 
-scopes = ['https://www.googleapis.com/auth/vision']
+scopes = ['https://www.googleapis.com/auth/cloud-platform']
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name(
     'google_credentials', scopes)
