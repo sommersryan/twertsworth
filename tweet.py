@@ -38,4 +38,6 @@ def getSourceTweet():
 	for account in config.SOURCE_ACCOUNTS:
 		for tweet in api.GetUserTimeline(screen_name=account, include_rts=False, exclude_replies=True):
 			sourceTweets.append(tweet)
-	return sourceTweets[random.randint(0,len(sourceTweets)-1)]
+	for tweet in random.shuffle(sourceTweets):
+		if tweet.media:
+			return tweet
