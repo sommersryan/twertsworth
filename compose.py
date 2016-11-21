@@ -32,7 +32,11 @@ def writePoem(textModel, seedWords, tweetPrefix):
 						logging.info('Could not use this key pair')
 	logging.info("None of the seed words worked")
 	genericPoem = textModel.make_short_sentence(tweetRoom)
-	listChars = list(genericPoem)
-	listChars[0] = listChars[0].upper()
-	finalPoem = "".join(listChars)
+	#split in to lists of words with lists of chars
+	words = [list(a) for a in genericPoem.split()] 
+	#ensure capitalized first word, lower case second
+	words[0][0] = words[0][0].upper()
+	words[1][0] = words[1][0].lower()
+	#recompose
+	finalPoem = ' '.join([''.join(letter) for letter in words])
 	return tweetPrefix + finalPoem
