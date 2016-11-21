@@ -24,7 +24,7 @@ while True:
 		if reply.media:
 			mediaReplies.append(reply)
 			
-	if random.randint(1,10) <= SOURCE_FREQUENCY:
+	if random.randint(1,720) <= SOURCE_FREQUENCY:
 		mediaReplies.append(tweet.getSourceTweet())
 
 	#Make list of tuples with the necessary info for each reply
