@@ -1,4 +1,5 @@
 import config, twitter, os, logging, static
+import random
 
 api = twitter.Api(
 					consumer_key = config.CONSUMER_KEY,
@@ -24,8 +25,17 @@ def getMediaURL(status):
 	mediaURLs = [pic.AsDict()["media_url"] for pic in status.media]
 	logging.info('Obtained %s URLs',str(len(mediaURLs)))
 	replyPrefix = '@' + status.user.screen_name + '\r'
+	if status.user.screen_name in config.SOURCE_ACCOUNTS:
+		replyPrefix = '.' + replyPrefix
 	return (status.id_str, replyPrefix, mediaURLs) #return the ID of what's going to be replied to, a prefix that's the @ and linebreak, and list of media URLs
 
 def replyTo(tweet,replyToID):
 	api.PostUpdate(status=tweet,in_reply_to_status_id=replyToID)
 	return "Reply complete"
+	
+def getSourceTweet():
+	sourceTweets = []
+	for account in config.SOURCE_ACCOUNTS:
+		for tweet in api.GetUserTimeline(screen_name=account, include_rts=False, exclude_replies=True):
+			sourceTweets.append(tweet)
+	return sourceTweets[random.randint(0,len(sourceTweets)-1]

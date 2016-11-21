@@ -1,5 +1,5 @@
 import compose, tweet, static, urllib.request, markovify, random, logging, time, sys
-from config import CORPUS_URL, ENCODING
+from config import CORPUS_URL, ENCODING, SOURCE_FREQUENCY
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
@@ -23,6 +23,9 @@ while True:
 	for reply in newReplies: 
 		if reply.media:
 			mediaReplies.append(reply)
+			
+	if random.randint(1,10) <= SOURCE_FREQUENCY:
+		mediaReplies.append(tweet.getSourceTweet())
 
 	#Make list of tuples with the necessary info for each reply
 		

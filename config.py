@@ -18,3 +18,6 @@ ENCODING = 'UTF-8' #encoding of your corpus file, mine is from Gutenberg ebooks 
 #s3 keys for static storage with Heroku 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID") or ''
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY") or ''
+
+SOURCE_ACCOUNTS = ['archillect','gettyimages','AP_Images'] #accounts to pull pictures from
+SOURCE_FREQUENCY = 4 #number of times out of 10 app should pick a random source tweet to reply to
