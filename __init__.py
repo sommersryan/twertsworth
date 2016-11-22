@@ -41,17 +41,12 @@ while True:
 
 	for reply in toDoList:
 
-		#Going to randomize the order and just pick the first one
-	
 		random.shuffle(reply[2])
 		logging.info('Using image %s for reply %s',reply[2][0],reply[0])
 		imageLabels = vision.getLabels(reply[2][0], service)
 		logging.info('Using labels %s',','.join(imageLabels))
 		tweetText = compose.writePoem(textModel, imageLabels, reply[1])
-		tweetCharList = list(tweetText)
-		finalCharList = [w.replace(',','\r') for w in tweetCharList]
-		finalTweet = "".join(finalCharList)
-		tweet.replyTo(finalTweet, int(reply[0])) #Reply ID needs to be int
+		tweet.replyTo(tweetText, int(reply[0])) #Reply ID needs to be int
 		if int(static.getSinceID()) < int(reply[0]):
 			static.setSinceID(reply[0])
 	time.sleep(60)
