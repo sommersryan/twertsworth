@@ -1,8 +1,9 @@
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
+from config import S3_BUCKET
 
 storageConnection = S3Connection()
-datastore = storageConnection.get_bucket('twertsworth')
+datastore = storageConnection.get_bucket(S3_BUCKET)
 
 def getSinceID():
 	return datastore.get_key('since_id').get_contents_as_string()

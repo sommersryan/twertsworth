@@ -53,5 +53,3 @@ def formatLine(line):
 	newLine = [[char.replace(',','\r') for char in word] for word in words]
 	formatted = ' '.join([''.join(letter) for letter in newLine])
 	return formatted
-	
-	
