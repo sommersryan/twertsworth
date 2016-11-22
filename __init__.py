@@ -1,5 +1,6 @@
-import compose, tweet, static, urllib.request, markovify, random, logging, time, sys
-from config import CORPUS_URL, ENCODING, SOURCE_FREQUENCY
+import compose, tweet, static, urllib.request, markovify, random, logging, time, sys, vision, httplib2
+from config import CORPUS_URL, ENCODING, SOURCE_FREQUENCY, SCOPES, API_DISCOVERY_FILE
+from oauth2client.service_account import ServiceAccountCredentials
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
@@ -12,8 +13,14 @@ while True:
 
 	with open('google_credentials','wb') as credentialsFile:
 		credentialsFile.write(static.getGoogleCredentials())
+		credentials = ServiceAccountCredentials.from_json_keyfile_name(
+		'google_credentials', SCOPES)
 	
-	import vision
+	http = httplib2.Http()
+
+	service = discovery.build('vision', 'v1', http, discoveryServiceUrl=API_DISCOVERY_FILE, credentials=credentials)
+
+	logging.info("Service built successfully.")
 
 	newReplies = tweet.checkReplies()
 	mediaReplies = []
@@ -38,13 +45,13 @@ while True:
 	
 		random.shuffle(reply[2])
 		logging.info('Using image %s for reply %s',reply[2][0],reply[0])
-		imageLabels = vision.getLabels(reply[2][0])
+		imageLabels = vision.getLabels(reply[2][0], service)
 		logging.info('Using labels %s',','.join(imageLabels))
-		tweetText = compose.writePoem(textModel,imageLabels,reply[1])
+		tweetText = compose.writePoem(textModel, imageLabels, reply[1])
 		tweetCharList = list(tweetText)
 		finalCharList = [w.replace(',','\r') for w in tweetCharList]
 		finalTweet = "".join(finalCharList)
-		tweet.replyTo(finalTweet,int(reply[0])) #Reply ID needs to be int
+		tweet.replyTo(finalTweet, int(reply[0])) #Reply ID needs to be int
 		if int(static.getSinceID()) < int(reply[0]):
 			static.setSinceID(reply[0])
 	time.sleep(60)

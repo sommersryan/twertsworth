@@ -1,20 +1,7 @@
-import json, base64, urllib.request, static, os, logging, httplib2
+import json, base64, urllib.request, static, os, logging
 from googleapiclient import discovery
-from oauth2client.service_account import ServiceAccountCredentials
 
-API_DISCOVERY_FILE = 'https://vision.googleapis.com/$discovery/rest?version=v1'
-http = httplib2.Http()
-
-scopes = ['https://www.googleapis.com/auth/cloud-platform']
-
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    'google_credentials', scopes)
-
-service = discovery.build('vision', 'v1', http, discoveryServiceUrl=API_DISCOVERY_FILE, credentials=credentials)
-
-logging.info("Service built successfully.")
-
-def getLabels(imageURL):
+def getLabels(imageURL, service):
 	req = urllib.request.Request(imageURL)
 	with urllib.request.urlopen(req) as response:
 		image_content = base64.b64encode(response.read())
