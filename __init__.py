@@ -1,6 +1,7 @@
 import compose, tweet, static, urllib.request, markovify, random, logging, time, sys, vision, httplib2
 from config import CORPUS_URL, ENCODING, SOURCE_FREQUENCY, SCOPES, API_DISCOVERY_FILE
 from oauth2client.service_account import ServiceAccountCredentials
+from googleapiclient import discovery
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
@@ -13,8 +14,8 @@ while True:
 
 	with open('google_credentials','wb') as credentialsFile:
 		credentialsFile.write(static.getGoogleCredentials())
-		credentials = ServiceAccountCredentials.from_json_keyfile_name(
-		'google_credentials', SCOPES)
+		
+	credentials = ServiceAccountCredentials.from_json_keyfile_name('google_credentials', SCOPES)
 	
 	http = httplib2.Http()
 

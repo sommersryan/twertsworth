@@ -13,7 +13,7 @@ def setSinceID(newID):
 	return True
 	
 def resetSinceID():
-	datastore.get_key('since_id').set_contents_from_string('779688396516012032')
+	datastore.get_key('since_id').set_contents_from_string('801194189035859969')
 	return True
 	
 def getGoogleCredentials():
