@@ -30,7 +30,7 @@ def writePoem(textModel, seedWords, tweetPrefix):
 				stanza = textModel.make_short_sentence(stanzaLength, init_state=result)
 				logging.info('Text model responded: %s',stanza)
 				if stanza:
-					logging.info("Satisfied conditions in %s attempts",t)							
+					logging.info('Adding line %s',stanza)
 					stanzas.append(formatLine(stanza))
 					break		
 				logging.info('Could not use this key pair')
