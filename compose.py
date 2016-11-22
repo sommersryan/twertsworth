@@ -1,12 +1,12 @@
 import json, markovify, random, logging
-from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING
+from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING, EXCLUDE_WORDS
 
 def writePoem(textModel, seedWords, tweetPrefix):
 	modelKeys = list(textModel.chain.model)
 	tweetRoom = MAX_CHAR - len(tweetPrefix) #need to keep track of how many chars we have for the tweet
 	random.shuffle(seedWords)
 	for word in seedWords:
-		if word == 'person':
+		if word in EXCLUDE_WORDS:
 			continue
 		logging.info('Trying %s',word)
 		results = [v for i, v in enumerate(modelKeys) if v[0] == word]
@@ -20,13 +20,13 @@ def writePoem(textModel, seedWords, tweetPrefix):
 					logging.info('Text model responded: %s',poem)
 					if poem:
 						if MIN_CHAR <= len(poem) <= tweetRoom:
-							logging.info("Satisfied conditions in %s attempts",t)
-							
-							#Capitalize first letter
-							
-							listChars = list(poem)
-							listChars[0] = listChars[0].upper()
-							finalPoem = "".join(listChars)
+							logging.info("Satisfied conditions in %s attempts",t)							
+							words = [list(a) for a in poem.split()] 
+							#ensure capitalized first word, lower case second
+							words[0][0] = words[0][0].upper()
+							words[1][0] = words[1][0].lower()
+							#recompose
+							finalPoem = ' '.join([''.join(letter) for letter in words])
 							return tweetPrefix + finalPoem
 					else:
 						logging.info('Could not use this key pair')
