@@ -20,7 +20,7 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID") or ''
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY") or ''
 S3_BUCKET = os.environ.get("S3_BUCKET") or ''
 
-SOURCE_ACCOUNTS = ['archillect','GettyImages','AP_Images'] #accounts to pull pictures from
+SOURCE_ACCOUNTS = ['archillect','GettyImages','AP_Images','blessediimages'] #accounts to pull pictures from
 SOURCE_FREQUENCY = 3 #avg times per 12 hours to pick a source tweet to reply to 
 
 API_DISCOVERY_FILE = 'https://vision.googleapis.com/$discovery/rest?version=v1'
