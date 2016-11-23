@@ -1,5 +1,5 @@
 import json, markovify, random, logging
-from config import MIN_CHAR, MAX_CHAR, ATTEMPTS, ENCODING, EXCLUDE_WORDS
+from config import MAX_CHAR, ENCODING, EXCLUDE_WORDS
 
 def writePoem(textModel, seedWords, tweetPrefix):
 	modelKeys = list(textModel.chain.model)
