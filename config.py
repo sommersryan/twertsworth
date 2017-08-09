@@ -19,7 +19,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY") or ''
 S3_BUCKET = os.environ.get("S3_BUCKET") or ''
 
 SOURCE_ACCOUNTS = ['archillect','GettyImages','AP_Images','blessediimages','NASAGoddardPix','GettyArchive'] #accounts to pull pictures from
-SOURCE_FREQUENCY = 1 #avg times per 12 hours to pick a source tweet to reply to 
+SOURCE_FREQUENCY = 0 #avg times per 12 hours to pick a source tweet to reply to 
 
 API_DISCOVERY_FILE = 'https://vision.googleapis.com/$discovery/rest?version=v1'
 SCOPES = ['https://www.googleapis.com/auth/cloud-platform']
